@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="card-background">
+    <div class="header-content">
+      <img src="assets/img/leaf.png" alt="Icono" class="card-icon" />
+      <ion-card-title class="card-label">LeafCheck</ion-card-title>
+    </div>
+  </ion-card>
+  <div class="body-content">
+    <ion-label>Seleccione el tipo de hoja</ion-label>
+    <ion-list>
+      <ion-item [routerLink]="['/tabs/tab1']">
+        <ion-label>Alstonia Scholaris</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Arjun</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Chinar</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Gauva</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Jamun</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Jatropha</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Lemon</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Mango</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
