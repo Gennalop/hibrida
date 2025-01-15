@@ -5,10 +5,10 @@ import {
   IonSelect, IonSelectOption, IonTextarea, IonButton,
   IonList, IonItem, IonLabel, IonHeader, IonToolbar, IonTitle, IonContent
 } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { ExploreContainerComponent } from '../../explore-container/explore-container.component';
 
 /* Importe el servicio */
-import { ProviderService } from '../services/provider.service';
+import { ProviderService } from '../../services/provider.service';
 
 @Component({
   selector: 'app-tab2',

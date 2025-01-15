@@ -1,13 +1,13 @@
 import { ViewChild, ElementRef, Component, signal } from '@angular/core';
 import { IonCardContent, IonButton, IonList, IonItem, IonLabel, IonFab, IonFabButton, IonIcon, IonCard, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { ExploreContainerComponent } from '../../explore-container/explore-container.component';
 /* Importe la función y el ícono */
 import { addIcons } from 'ionicons';
 import { cloudUploadOutline } from 'ionicons/icons';
 /* Importe el pipe */
 import { PercentPipe } from '@angular/common';
 /* Importe el servicio */
-import { TeachablemachineService } from '../services/teachablemachine.service';
+import { TeachablemachineService } from '../../services/teachablemachine.service';
 
 @Component({
   selector: 'app-tab1',

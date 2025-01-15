@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "nombre": "Africanized Honey Bees (Killer Bees)",
+        "descripcion": "Un insecto peligroso con veneno.",
+        "localidad": "Desierto"
+    },
+    {
+        "id": 2,
+        "nombre": "Aphids",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    },
+    {
+        "id": 3,
+        "nombre": "Armyworms",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    },
+    {
+        "id": 4,
+        "nombre": "Brown Marmorated Stink Bugs",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    },
+    {
+        "id": 5,
+        "nombre": "Cabbage Loopers",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    },
+    {
+        "id": 6,
+        "nombre": "Citrus Canker",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    },
+    {
+        "id": 7,
+        "nombre": "Colorado Potato Beetles",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    },
+    {
+        "id": 8,
+        "nombre": "Corn Borers",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    },
+    {
+        "id": 9,
+        "nombre": "Corn Earworms",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    },
+    {
+        "id": 10,
+        "nombre": "Fall Armyworms",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    },
+    {
+        "id": 11,
+        "nombre": "Fruit Flies",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    },
+    {
+        "id": 12,
+        "nombre": "Spider Mites",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    },
+    {
+        "id": 13,
+        "nombre": "Thrips",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    },
+    {
+        "id": 14,
+        "nombre": "Tomato Hornworms",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    },
+    {
+        "id": 15,
+        "nombre": "Western Corn Rootworms",
+        "descripcion": "Insecto conocido por sus alas coloridas.",
+        "localidad": "Bosque"
+    }
+
+]

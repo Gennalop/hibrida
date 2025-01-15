@@ -1,0 +1,44 @@
+.custom-header ion-toolbar {
+    background-color: rgb(18, 129, 92) !important;
+}
+
+ion-card {
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #757575;
+}
+
+.custom-btn {
+    --background: rgb(58, 63, 61);
+}
+
+.collection-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 350px;
+    
+
+    img {
+        max-height: 100%;
+        width: auto;
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .logo {
+        height: 200px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
