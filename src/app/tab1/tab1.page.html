@@ -23,24 +23,33 @@
     @if(modelLoaded()) {
 
     <div class="ion-text-center ion-padding-top ion-padding-bottom">
-      <ion-button fill="outline" color="success" (click)="predict()">Predecir</ion-button>
+      <ion-button fill="outline" color="success" (click)="predict()">Identificar Insecto</ion-button>
     </div>
 
     <ion-list>
+      <!--
       <ion-item>
         <ion-label>Clases: {{ classLabels }} </ion-label>
-      </ion-item>
+      </ion-item> -->
       <!-- Itere sobre la lista de predicciones -->
-      @for (item of predictions; track $index) {
+     <!-- @for (item of predictions; track $index) {
       <ion-item>
         <ion-label> {{ item?.className }} : {{ item?.probability | percent }} </ion-label>
       </ion-item>
-      }
+      } -->
+
+      @if(highestPrediction) {
+        <ion-item>
+          <ion-label>
+            Insecto: {{ highestPrediction.className }}
+            - {{ highestPrediction.probability | percent }}
+          </ion-label>
+        </ion-item>
+        }
     </ion-list>
 
     }
     <!-- CARGA DE PREDICCIÓN - FIN -->
-
   </ion-card>
   }
   <!-- CARGA DE IMAGEN - FIN -->

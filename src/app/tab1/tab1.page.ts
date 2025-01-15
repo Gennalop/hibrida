@@ -50,11 +50,19 @@ export class Tab1Page {
   }
   /* Lista de predicciones */
   predictions: any[] = [];
+
+  highestPrediction: any = null;
   /* Método para obtener la predicción a partir de la imagen */
   async predict() {
     try {
       const image = this.imageElement.nativeElement;
       this.predictions = await this.teachablemachine.predict(image);
+
+      this.highestPrediction = this.predictions.reduce((prev, current) =>
+        prev.probability > current.probability ? prev : current
+      );
+
+  
     } catch (error) {
       console.error(error);
       alert('Error al realizar la predicción.');
