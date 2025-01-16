@@ -3,11 +3,12 @@ import { IonCardContent, IonButton, IonList, IonItem, IonLabel, IonFab, IonFabBu
 import { ExploreContainerComponent } from '../../explore-container/explore-container.component';
 /* Importe la función y el ícono */
 import { addIcons } from 'ionicons';
-import { cloudUploadOutline } from 'ionicons/icons';
+import { cloudUploadOutline, camera } from 'ionicons/icons';
 /* Importe el pipe */
 import { PercentPipe } from '@angular/common';
 /* Importe el servicio */
 import { TeachablemachineService } from '../../services/teachablemachine.service';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 @Component({
   selector: 'app-tab1',
@@ -26,7 +27,7 @@ export class Tab1Page {
   classLabels: string[] = [];
   constructor(private teachablemachine: TeachablemachineService) {
     /* Registre el ícono */
-    addIcons({ cloudUploadOutline });
+    addIcons({ cloudUploadOutline, camera });
   }
   /* El método onSubmit para enviar los datos del formulario mediante el servicio */
   onFileSelected(event: Event): void {
@@ -48,6 +49,22 @@ export class Tab1Page {
     this.classLabels = this.teachablemachine.getClassLabels()
     this.modelLoaded.set(true)
   }
+
+  async takePhoto() {
+    try {
+      const image = await Camera.getPhoto({
+        quality: 90, 
+        resultType: CameraResultType.DataUrl, 
+        source: CameraSource.Camera, 
+      });
+      const capturedImage = image.dataUrl;
+      this.imageUrl.set(capturedImage as string);
+      this.imageReady.set(true);
+    } catch (error) {
+      console.error('Error al tomar la foto:', error);
+    }
+  }
+  
   /* Lista de predicciones */
   predictions: any[] = [];
 
@@ -68,4 +85,5 @@ export class Tab1Page {
       alert('Error al realizar la predicción.');
     }
   }
+
 }
