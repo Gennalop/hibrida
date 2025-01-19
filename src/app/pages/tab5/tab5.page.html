@@ -1,13 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>tab5</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defautHref="tab4"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tab5</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card *ngIf="collectionInfo">
+    <ion-card-header>
+      <ion-card-title class="titulo">{{ collectionInfo.nombre }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="'assets/img/' + collectionInfo.img" alt="{{ collectionInfo.nombre }}">
+    </ion-card-content>
+  </ion-card>
 </ion-content>
