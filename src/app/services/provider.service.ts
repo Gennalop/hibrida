@@ -2,7 +2,7 @@
 import { Injectable, inject } from '@angular/core';
 
 /* Importe los módulos de AngularFire */
-import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, collectionData, doc, docData} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class ProviderService {
   /* Inyecte de dependencia AngularFire */
   firestoreService = inject(Firestore);
+
   constructor() { }
   /* Método para crear un documento en la colección */
   createDocument(collectionName: string, data: any): Promise<any> {
@@ -22,4 +23,11 @@ export class ProviderService {
     const colRef = collection(this.firestoreService, collectionName);
     return collectionData(colRef, { idField: 'id' });
   }
+
+  getInsectoById(id: string, collectionName: string): Observable<any> {
+    const insectoDoc = doc(this.firestoreService, collectionName, id);
+    console.log(insectoDoc);
+    return docData(insectoDoc, { idField: 'id' });
+  }
+
 }

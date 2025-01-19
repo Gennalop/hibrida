@@ -9,13 +9,17 @@ import { PercentPipe } from '@angular/common';
 /* Importe el servicio */
 import { TeachablemachineService } from '../../services/teachablemachine.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { CollectionService } from '../../services/collection.service';
+import { RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [PercentPipe, IonCardContent, IonButton, IonList, IonItem, IonLabel, IonFab, IonFabButton, IonIcon, IonCard, IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
+  imports: [CommonModule, RouterModule, PercentPipe, IonCardContent, IonButton, IonList, IonItem, IonLabel, IonFab, IonFabButton, IonIcon, IonCard, IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
 })
 export class Tab1Page {
   /* Declare la referencia al elemento con el id image */
@@ -25,7 +29,7 @@ export class Tab1Page {
   /* Declare los atributos para almacenar el modelo y la lista de clases */
   modelLoaded = signal(false);
   classLabels: string[] = [];
-  constructor(private teachablemachine: TeachablemachineService) {
+  constructor(private teachablemachine: TeachablemachineService, private collectionService: CollectionService, private http: HttpClient) {
     /* Registre el ícono */
     addIcons({ cloudUploadOutline, camera });
   }
@@ -43,19 +47,26 @@ export class Tab1Page {
       reader.readAsDataURL(file); // Leer el archivo como base64
     }
   }
+
+  collections: any[] = [];
+  private jsonUrl = 'assets/collectionInfo.json';
   /* Método ngOnInit para cargar el modelo y las clases */
   async ngOnInit() {
     await this.teachablemachine.loadModel()
     this.classLabels = this.teachablemachine.getClassLabels()
     this.modelLoaded.set(true)
+    this.http.get<any[]>(this.jsonUrl).subscribe(data => {
+      this.collections = data;
+    })
+
   }
 
   async takePhoto() {
     try {
       const image = await Camera.getPhoto({
-        quality: 90, 
-        resultType: CameraResultType.DataUrl, 
-        source: CameraSource.Camera, 
+        quality: 90,
+        resultType: CameraResultType.DataUrl,
+        source: CameraSource.Camera,
       });
       const capturedImage = image.dataUrl;
       this.imageUrl.set(capturedImage as string);
@@ -64,7 +75,7 @@ export class Tab1Page {
       console.error('Error al tomar la foto:', error);
     }
   }
-  
+
   /* Lista de predicciones */
   predictions: any[] = [];
 
@@ -78,8 +89,8 @@ export class Tab1Page {
       this.highestPrediction = this.predictions.reduce((prev, current) =>
         prev.probability > current.probability ? prev : current
       );
+      console.log('Highest Prediction:', this.highestPrediction);
 
-  
     } catch (error) {
       console.error(error);
       alert('Error al realizar la predicción.');

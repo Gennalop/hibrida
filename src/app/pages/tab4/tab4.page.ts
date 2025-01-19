@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { IonButton, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { CollectionService } from '../../services/collection.service';
 
 @Component({
   selector: 'app-tab4',
@@ -16,11 +17,13 @@ export class Tab4Page implements OnInit {
   private jsonUrl = 'assets/collectionInfo.json';
   public collections: any[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private collectionService: CollectionService) { }
 
   ngOnInit() {
     this.http.get<any[]>(this.jsonUrl).subscribe(data => {
       this.collections = data;
     })
+
+    this.collectionService.setCollection(this.collections);
   }
 }

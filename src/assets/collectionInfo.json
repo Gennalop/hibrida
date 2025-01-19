@@ -1,77 +1,77 @@
 [
     {
         "id": 1,
-        "nombre": "Killer Bees",
+        "nombre": "Abejas asesinas",
         "img": "1.jpg"
     },
     {
         "id": 2,
-        "nombre": "Aphids",
+        "nombre": "Pulgones",
         "img": "2.jpg"
     },
     {
         "id": 3,
-        "nombre": "Armyworms",
+        "nombre": "Gusano soldados",
         "img": "3.png"
     },
     {
         "id": 4,
-        "nombre": "Brown Marmorated Stink Bugs",
+        "nombre": "Chinche parda marmorada",
         "img": "4.jpg"
     },
     {
         "id": 5,
-        "nombre": "Cabbage Loopers",
+        "nombre": "Lanzadores de repollo",
         "img": "5.png"
     },
     {
         "id": 6,
-        "nombre": "Citrus Canker",
+        "nombre": "Cancro de los cítricos",
         "img": "6.jpg"
     },
     {
         "id": 7,
-        "nombre": "Colorado Potato Beetles",
+        "nombre": "Escarabajo de la patata del Colorado",
         "img": "7.jpg"
     },
     {
         "id": 8,
-        "nombre": "Corn Borers",
+        "nombre": "Barrenador del maíz",
         "img": "8.png"
     },
     {
         "id": 9,
-        "nombre": "Corn Earworms",
+        "nombre": "Gusano del maíz",
         "img": "9.jpg"
     },
     {
         "id": 10,
-        "nombre": "Fall Armyworms",
+        "nombre": "Gusano cogollero",
         "img": "10.png"
     },
     {
         "id": 11,
-        "nombre": "Fruit Flies",
+        "nombre": "Mosca de la fruta",
         "img": "11.jpg"
     },
     {
         "id": 12,
-        "nombre": "Spider Mites",
+        "nombre": "Araña roja",
         "img": "12.png"
     },
     {
         "id": 13,
-        "nombre": "Thrips",
+        "nombre": "Trips",
         "img": "13.jpg"
     },
     {
         "id": 14,
-        "nombre": "Tomato Hornworms",
+        "nombre": "Gusano del tomate",
         "img": "14.jpg"
     },
     {
         "id": 15,
-        "nombre": "Western Corn Rootworms",
+        "nombre": "Gusano de la raíz del maíz occidental",
         "img": "15.jpg"
     }
 
