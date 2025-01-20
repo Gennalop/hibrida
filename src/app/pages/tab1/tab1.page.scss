@@ -1,7 +1,52 @@
-img {
-    width: 100vw;
-    height: 30vh;
-    object-fit: cover;
+ion-toolbar {
+    --background: rgb(18, 129, 92);
+    padding-right: 10px;
+    ion-title {
+        color: white;
+    }
+    img {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+p {
+    color: black;
+}
+
+ion-content {
+    --background: rgb(255, 255, 255);
+}
+
+ion-fab-button {
+    --background: rgb(20, 20, 20);
+    ion-icon {
+        color: white;
+    }
+}
+
+.img-container {
+    display: flex;
+    padding: 0px 20px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    img {
+        object-fit: cover;
+        height: 50vmin;
+    }
+}
+
+ion-card {
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 80px;
+}
+
+.custom-btn {
+    --background: rgb(20, 20, 20);
+    color: rgb(255, 255, 255);
 }
 
 ion-button {
@@ -10,5 +55,12 @@ ion-button {
 
 .fab-container {
     display: flex;
-    gap: 30px; 
-  }
+    gap: 30px;
+}
+
+@media (max-width: 576px) {
+    .img-container img {
+        width: 100%;
+        height: auto;
+    }
+}

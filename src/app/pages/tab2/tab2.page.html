@@ -3,6 +3,9 @@
     <ion-title>
       Retroalimentación
     </ion-title>
+    <ion-buttons slot="end">
+      <img src="assets/img/lg.png" alt="lg">
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -11,22 +14,25 @@
   <ion-card class="ion-padding-bottom ion-margin-bottom">
 
     <ion-card-header>
-      <ion-card-title>Su opinión es importante</ion-card-title>
+      <ion-card-title>Ayúdanos a mejorar. Déjanos tu opinión sobre PestAware</ion-card-title>
     </ion-card-header>
-
-    <ion-card-content class="ion-text-center">
-
+    <ion-card-content>
       <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-
+        <!-- Selector de calificación -->
         <ion-select formControlName="score" label="Calificación" placeholder="Seleccione un valor">
           <ion-select-option value="bueno">Bueno</ion-select-option>
           <ion-select-option value="regular">Regular</ion-select-option>
           <ion-select-option value="malo">Malo</ion-select-option>
         </ion-select>
-        <ion-textarea formControlName="opinion" label="Opinión"
-          placeholder="Agregue aquí su descripción"></ion-textarea>
-        <ion-button type="submit" [disabled]="!myForm.valid">Enviar</ion-button>
-
+        <div class="opinion-content">
+          <!-- Título para opinión -->
+          <div class="title-opinion">Opinión</div>
+          <!-- Campo de opinión -->
+          <ion-textarea formControlName="opinion" class="custom-textarea"
+            placeholder="Escribe aquí tu opinión..."></ion-textarea>
+        </div>
+        <div class="custom-button"><ion-button type="submit" [disabled]="!myForm.valid" class="conditional-button">Enviar opinión</ion-button></div>
+        
       </form>
 
     </ion-card-content>
@@ -37,11 +43,8 @@
     <ion-card-header>
       <ion-card-title>Opiniones</ion-card-title>
     </ion-card-header>
-
     <ion-card-content>
-
       <ion-list>
-
         <!-- CARGA DE DATOS - INICIO -->
         @for (datum of dataList; track $index) {
         <ion-item>
@@ -50,9 +53,7 @@
         </ion-item>
         }
         <!-- CARGA DE DATOS - FIN -->
-
       </ion-list>
-
     </ion-card-content>
   </ion-card>
 

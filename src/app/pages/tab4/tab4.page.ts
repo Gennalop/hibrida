@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { IonButton, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { IonButtons, IonButton, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
 import { CollectionService } from '../../services/collection.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { CollectionService } from '../../services/collection.service';
   templateUrl: 'tab4.page.html',
   styleUrls: ['tab4.page.scss'],
   standalone: true,
-  imports: [RouterModule, IonButton, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonHeader, IonToolbar, IonTitle, IonContent, CommonModule, FormsModule],
+  imports: [IonButtons, RouterModule, IonButton, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonHeader, IonToolbar, IonTitle, IonContent, CommonModule, FormsModule],
 })
 export class Tab4Page implements OnInit {
   private jsonUrl = 'assets/collectionInfo.json';

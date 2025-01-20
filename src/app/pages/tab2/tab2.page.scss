@@ -1,0 +1,79 @@
+ion-toolbar {
+    --background: rgb(18, 129, 92);
+    padding-right: 10px;
+
+    ion-title {
+        color: white;
+    }
+
+    img {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+ion-content {
+    --background: rgb(255, 255, 255);
+}
+
+ion-card {
+    background-color: rgb(255, 255, 255);
+}
+
+ion-textarea {
+    padding: 0px 0px 0px;
+}
+
+p {
+    color: black;
+}
+
+.opinion-content {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.custom-button {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.title-opinion {
+    padding-top: 3px;
+}
+
+.custom-textarea {
+    --padding-start: 4px; /* Quita el padding del inicio (izquierda) */
+    --padding-end: 4px;   /* Quita el padding del final (derecha) */
+    --padding-top: 4px;   /* Quita el padding superior */
+    --padding-bottom: 4px; /* Quita el padding inferior */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 14px;
+    background-color: #f9f9f9;
+}
+
+.conditional-button {
+    --background: rgb(20, 20, 20);
+    --color: white;
+}
+
+.conditional-button:disabled {
+    --background: #ccc;
+    --color: #666;
+}
+
+@media (max-width: 576px) {
+    .opinion-content {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+}

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import {
-  IonCard, IonCardHeader, IonCardTitle, IonCardContent,
+  IonButtons, IonCard, IonCardHeader, IonCardTitle, IonCardContent,
   IonSelect, IonSelectOption, IonTextarea, IonButton,
   IonList, IonItem, IonLabel, IonHeader, IonToolbar, IonTitle, IonContent
 } from '@ionic/angular/standalone';
@@ -15,7 +15,7 @@ import { ProviderService } from '../../services/provider.service';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
   standalone: true,
-  imports: [ReactiveFormsModule, IonCard, IonCardHeader, IonCardTitle, IonCardContent,
+  imports: [IonButtons, ReactiveFormsModule, IonCard, IonCardHeader, IonCardTitle, IonCardContent,
     IonSelect, IonSelectOption, IonTextarea, IonButton,
     IonList, IonItem, IonLabel, IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent]
 })

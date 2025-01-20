@@ -13,17 +13,21 @@ import { CollectionService } from '../../services/collection.service';
 import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { IonButtons } from '@ionic/angular/standalone';
+
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [CommonModule, RouterModule, PercentPipe, IonCardContent, IonButton, IonList, IonItem, IonLabel, IonFab, IonFabButton, IonIcon, IonCard, IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
+  imports: [IonButtons, CommonModule, RouterModule, PercentPipe, IonCardContent, IonButton, IonList, IonItem, IonLabel, IonFab, IonFabButton, IonIcon, IonCard, IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
 })
 export class Tab1Page {
   /* Declare la referencia al elemento con el id image */
+  @ViewChild('fileInput') fileInput!: ElementRef;
   @ViewChild('image', { static: false }) imageElement!: ElementRef<HTMLImageElement>;
+
   imageReady = signal(false)
   imageUrl = signal("")
   /* Declare los atributos para almacenar el modelo y la lista de clases */
@@ -62,6 +66,7 @@ export class Tab1Page {
   }
 
   async takePhoto() {
+    this.newPhoto();
     try {
       const image = await Camera.getPhoto({
         quality: 90,
@@ -74,6 +79,12 @@ export class Tab1Page {
     } catch (error) {
       console.error('Error al tomar la foto:', error);
     }
+  }
+
+
+  async handleClick() {
+    this.fileInput.nativeElement.click();  // Llama a fileInput.click()
+    this.newPhoto();  // Llama a la función newPhoto
   }
 
   /* Lista de predicciones */
@@ -95,6 +106,12 @@ export class Tab1Page {
       console.error(error);
       alert('Error al realizar la predicción.');
     }
+  }
+
+  newPhoto() {
+    this.imageReady = signal(false);
+    this.predictions = [];
+    this.highestPrediction = null;
   }
 
 }

@@ -1,33 +1,48 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Acerca de
+      Más información
     </ion-title>
+    <ion-buttons slot="end">
+      <img src="assets/img/lg.png" alt="lg">
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-card>
-    <ion-card-header>
-      <ion-card-title class="titulo">Descripción</ion-card-title>
-    </ion-card-header>
     <ion-card-content>
-      <p id="descripcion">
-        Esta aplicación utiliza <strong>Teachable Machine</strong> para reconocer imágenes y determinar el tipo de insecto que aparece en
-        ellas. Además, proporciona información detallada sobre el insecto identificado.
-        Dentro de la aplicación, también puedes acceder a un directorio que incluye información sobre insectos
-        peligrosos para la agricultura, ayudándote a identificar cuáles representan una amenaza.
-        La aplicación usa un conjunto de datos hecho por los desarrolladores y otro que se obtuvo de <a
-          href="https://www.kaggle.com/datasets/tarundalal/dangerous-insects-dataset" target="_blank" rel="noopener noreferrer">Kaggle</a>.
-      </p>
-      <ion-card-subtitle class="titulo">¿Cómo usar la aplicación?</ion-card-subtitle>
-      <ol>
-        <li>Dirígete a la sección Teachable Machine.</li>
-        <li>Sube la imagen del insecto que deseas identificar.</li>
-        <li>Presiona el botón Identificar Insecto.</li>
-        <li>La aplicación mostrará toda la información relevante sobre el insecto.</li>
-      </ol>
-      <p>Esta aplicación fue desarrollada por Christopher Villón y Génesis Lopez</p>
+      <div class="custom-section">
+        <ion-card-title class="titulo">Acerca de AgroScan</ion-card-title>
+        <p id="descripcion">
+          PestAware es una aplicación diseñada para identificar insectos dañinos en la agricultura y granjas, ayudando a
+          los usuarios a proteger sus cultivos y animales. Utiliza inteligencia artificial, específicamente
+          <strong>Teachable Machine</strong> , para analizar imágenes y determinar el tipo de insecto que aparece en
+          ellas. Dentro de la aplicación, también puedes acceder a un directorio completo con información detallada
+          sobre
+          plagas comunes, ayudándote a identificar cuáles representan una amenaza.La aplicación usa un conjunto de datos
+          hecho por los desarrolladores y otro que se obtuvo de <a
+            href="https://www.kaggle.com/datasets/tarundalal/dangerous-insects-dataset" target="_blank"
+            rel="noopener noreferrer">Kaggle</a>.
+        </p>
+      </div>
+      <div>
+        <ion-card-title class="titulo">¿Cómo usar PestAware?</ion-card-title>
+        <ol>
+          <li>Dirígete a la sección Teachable Machine.</li>
+          <li>Sube la imagen del insecto que deseas identificar.</li>
+          <li>Presiona el botón Identificar Insecto.</li>
+          <li>La aplicación analizará la imagen y mostrará el nombre, porcentaje de coincidencia y más detalles sobre el
+            insecto detectado.</li>
+        </ol>
+        <p>
+          Si deseas explorar insectos sin subir una imagen, puedes visitar la sección Inicio, donde encontrarás una
+          galería con fotos y nombres.</p>
+      </div>
+      <div class="custom-section">
+        <ion-card-title class="titulo">Desarrolladores</ion-card-title>
+        <p>Esta aplicación fue desarrollada por Christopher Villón y Génesis Lopez</p>
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>

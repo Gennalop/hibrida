@@ -3,69 +3,51 @@
     <ion-title>
       Teachable Machine
     </ion-title>
+    <ion-buttons slot="end">
+      <img src="assets/img/lg.png" alt="lg">
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Teachable Machine</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
   <!-- CARGA DE IMAGEN - INICIO -->
   @if(imageReady()) {
   <ion-card>
-
-    <img #image [src]="imageUrl()" alt="Imagen seleccionada" />
-
+    <div class="img-container">
+      <img #image [src]="imageUrl()" alt="Imagen seleccionada" />
+    </div>
     <!-- CARGA DE PREDICCIÓN - INICIO -->
     @if(modelLoaded()) {
-
     <div class="ion-text-center ion-padding-top ion-padding-bottom">
       <ion-button fill="outline" color="success" (click)="predict()">Identificar Insecto</ion-button>
     </div>
-
     <ion-list>
-      <!--
-      <ion-item>
-        <ion-label>Clases: {{ classLabels }} </ion-label>
-      </ion-item> -->
-      <!-- Itere sobre la lista de predicciones -->
-      <!-- @for (item of predictions; track $index) {
-      <ion-item>
-        <ion-label> {{ item?.className }} : {{ item?.probability | percent }} </ion-label>
-      </ion-item>
-      } -->
-
       @if(highestPrediction) {
       <ion-item>
         <ion-label>
           Insecto: {{ highestPrediction.className }}
           - {{ highestPrediction.probability | percent }}
         </ion-label>
-          @for (collection of collections; track $index) {
-            @if (collection.nombre == highestPrediction.className) {
-              <ion-button class="custom-btn" [routerLink]="['/tab5/' + collection.id]" >Ver Información</ion-button>
-            }
-          } 
+        @for (collection of collections; track $index) {
+        @if (collection.nombre == highestPrediction.className) {
+        <ion-button class="custom-btn" [routerLink]="['/tab5/' + collection.id]">Ver Información</ion-button>
+        }
+        }
       </ion-item>
       }
     </ion-list>
-
     }
     <!-- CARGA DE PREDICCIÓN - FIN -->
   </ion-card>
   }
   <!-- CARGA DE IMAGEN - FIN -->
-
   <!-- Referencia en plantilla #fileInput, callback para el evento change y oculte el elemento -->
   <input #fileInput type="file" accept="image/*" (change)="onFileSelected($event)" hidden />
-
   <!-- Disparo del evento click de fileInput -->
   <ion-fab slot="fixed" vertical="bottom" horizontal="center">
     <div class="fab-container">
-      <ion-fab-button (click)="fileInput.click()">
+      <ion-fab-button (click)="handleClick()">
         <ion-icon name="cloud-upload-outline"></ion-icon>
       </ion-fab-button>
       <ion-fab-button (click)="takePhoto()">

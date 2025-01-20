@@ -9,5 +9,12 @@ ion-label {
 }
 
 ion-tab-button.tab-selected {
-    background-color:rgb(12, 92, 65);
+    background-color: rgb(12, 92, 65);
+}
+
+@media (max-width: 400px) {
+    ion-label {
+        font-size: 10px;
+        /* Tamaño de los íconos más pequeño en pantallas pequeñas */
+    }
 }
