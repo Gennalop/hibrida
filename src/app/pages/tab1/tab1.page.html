@@ -46,7 +46,7 @@
         </ion-label>
           @for (collection of collections; track $index) {
             @if (collection.nombre == highestPrediction.className) {
-              <ion-button class="custom-btn" [routerLink]="['/tab5/' + collection.id]" >Ver Información</ion-button>
+              <ion-button [routerLink]="['/tab5/' + collection.id]" >Ver Información</ion-button>
             }
           } 
       </ion-item>

@@ -9,7 +9,6 @@ import { PercentPipe } from '@angular/common';
 /* Importe el servicio */
 import { TeachablemachineService } from '../../services/teachablemachine.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
-import { CollectionService } from '../../services/collection.service';
 import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
@@ -29,7 +28,7 @@ export class Tab1Page {
   /* Declare los atributos para almacenar el modelo y la lista de clases */
   modelLoaded = signal(false);
   classLabels: string[] = [];
-  constructor(private teachablemachine: TeachablemachineService, private collectionService: CollectionService, private http: HttpClient) {
+  constructor(private teachablemachine: TeachablemachineService, private http: HttpClient) {
     /* Registre el ícono */
     addIcons({ cloudUploadOutline, camera });
   }
