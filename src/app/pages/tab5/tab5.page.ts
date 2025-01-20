@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonIcon, IonAvatar, IonCardTitle, IonCardContent, IonCardHeader, IonButton, IonGrid, IonRow, IonCol, IonCard, IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { ProviderService } from '../../services/provider.service';
 import { locationOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 
@@ -19,8 +20,12 @@ export class Tab5Page implements OnInit {
   private jsonUrl = 'assets/collectionInfo.json';
   collectionId: string | null = null;
   collectionInfo: any = null;
+  public insectoInfo: any = null;
 
-  constructor(private activatedRoute: ActivatedRoute, private http: HttpClient) {
+  collectionName = 'info insectos';
+
+  constructor(private activatedRoute: ActivatedRoute, private http: HttpClient, private providerService: ProviderService)
+  {
     addIcons({ locationOutline });
   }
 
@@ -29,6 +34,13 @@ export class Tab5Page implements OnInit {
     this.http.get<any[]>(this.jsonUrl).subscribe(data => {
       this.collectionInfo = data.find(collection => collection.id.toString() === this.collectionId);
     })
+    this.providerService.getInsectoById(this.collectionId as string, this.collectionName).subscribe((data) => {
+      this.insectoInfo = data;
+    });
+  }
+
+  public getInsectoInf() {
+    return this.insectoInfo;
   }
 
 }

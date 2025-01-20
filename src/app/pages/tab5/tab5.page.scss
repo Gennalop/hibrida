@@ -14,8 +14,6 @@
     border-radius: 50%;
 }
 
-
-
 .general-info-content {
     display: flex;
     flex-direction: row;
@@ -27,15 +25,14 @@
 
 @media (max-width: 576px) {
     .general-info-content {
-      margin: 0px 30px;
-      margin-top: 40px;
+        margin: 0px 30px;
+        margin-top: 40px;
     }
-  }  
+}
 
 .general-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-    
+
 }

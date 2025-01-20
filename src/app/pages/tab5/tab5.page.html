@@ -1,13 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title *ngIf="collectionInfo">{{ collectionInfo.nombre }}</ion-title>
+    <ion-title *ngIf="insectoInfo">{{ insectoInfo.nombre }}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defautHref="tab4"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" *ngIf="collectionInfo">
+<ion-content [fullscreen]="true" *ngIf="collectionInfo && insectoInfo">
   <div class="general-info-content">
     <div class="avatar-content">
       <ion-avatar class="custom-avatar">
@@ -15,10 +15,10 @@
       </ion-avatar>
     </div>
     <div class="general-info">
-      <p><strong>Nombre Cientifico:</strong> {{ collectionInfo.nombreCientifico }}</p>
-      <p>{{ collectionInfo.descripcion }}</p>
-      <p><strong>Características:</strong> {{ collectionInfo.caracteristicas }}</p>
-      <p><ion-icon name="location-outline"></ion-icon> {{ collectionInfo.region }}</p>
+      <p><strong>Nombre Cientifico:</strong> {{ insectoInfo.nombreCientifico }}</p>
+      <p>{{ insectoInfo.descripcion }}</p>
+      <p><strong>Características:</strong> {{ insectoInfo.caracteristicas }}</p>
+      <p><ion-icon name="location-outline"></ion-icon> {{ insectoInfo.region }}</p>
     </div>
   </div>
   <ion-grid>
@@ -29,27 +29,28 @@
             <ion-card-title class="titulo">Daños que causa</ion-card-title>
           </ion-card-header>
           <ion-card-content class="collection-card">
-            <p>{{ collectionInfo.danos }}</p>
+            <p>{{ insectoInfo.Consecuencias }}</p>
+            <p><strong>Cultivos o animales afectados:</strong> {{ insectoInfo.afectados }}</p>
           </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col size-lg="4" size-md="4" size-sm="12" size="12">
-        <ion-card node="ios">
+        <ion-card>
           <ion-card-header>
-            <ion-card-title class="titulo">Cultivos o animales afectados</ion-card-title>
+            <ion-card-title class="titulo">Prevención</ion-card-title>
           </ion-card-header>
           <ion-card-content class="collection-card">
-            <p>{{ collectionInfo.afectados }}</p>
+            <p>{{ insectoInfo.Prevenir }}</p>
           </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col size-lg="4" size-md="4" size-sm="12" size="12">
-        <ion-card node="ios">
+        <ion-card>
           <ion-card-header>
             <ion-card-title class="titulo">Métodos de control</ion-card-title>
           </ion-card-header>
           <ion-card-content class="collection-card">
-            <p>{{ collectionInfo.control }}</p>
+            <p>{{ insectoInfo.Control }}</p>
           </ion-card-content>
         </ion-card>
       </ion-col>

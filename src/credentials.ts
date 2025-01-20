@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 export const firebaseConfig = {
-  apiKey: "AIzaSyCHhpcKf4U_L-_EMJJ-7xoEQBqIXgzljYo",
-  authDomain: "hibrida-b0d1f.firebaseapp.com",
-  projectId: "hibrida-b0d1f",
-  storageBucket: "hibrida-b0d1f.firebasestorage.app",
-  messagingSenderId: "40712928402",
-  appId: "1:40712928402:web:723485c0f2c0ed5ab83a4b"
+  apiKey: "AIzaSyAmDZueWSs5LvJZGpRdZ0kkxzZEUmV6c30",
+  authDomain: "hibrida-461da.firebaseapp.com",
+  projectId: "hibrida-461da",
+  storageBucket: "hibrida-461da.firebasestorage.app",
+  messagingSenderId: "314645784349",
+  appId: "1:314645784349:web:ee3e48e56b2a478987e3f4"
 };
 
 // Initialize Firebase
