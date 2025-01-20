@@ -27,15 +27,19 @@ export const routes: Routes = [
           import('../pages/tab4/tab4.page').then((m) => m.Tab4Page),
       },
       {
+        path: 'intro',
+        loadComponent: () => import('../pages/intro/intro.page').then( m => m.IntroPage)
+      },
+      {
         path: '',
-        redirectTo: '/tabs/tab4',
+        redirectTo: '/intro',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '/tabs/tab4',
+    redirectTo: '/intro',
     pathMatch: 'full',
   },
 ];

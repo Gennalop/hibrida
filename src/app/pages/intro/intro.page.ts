@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-intro',
@@ -12,9 +13,13 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
 })
 export class IntroPage implements OnInit {
 
-  constructor() { }
+  showIntro = true;
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.showIntro = false;
+      this.router.navigate(['./tabs/tab4']);
+    }, 3000); // 3 segundos (ajustable)
   }
-
 }

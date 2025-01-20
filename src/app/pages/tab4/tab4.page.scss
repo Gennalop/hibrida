@@ -1,5 +1,5 @@
 ion-toolbar {
-    --background: rgb(18, 129, 92);
+    --background: #4CAF50;
     padding-right: 10px;
     ion-title {
         color: white;
@@ -30,11 +30,11 @@ p {
 ion-card {
     border-radius: 15px;
     background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(20, 20, 20);
+    border: 2px solid black;
 }
 
 .custom-btn {
-    --background: rgb(20, 20, 20);
+    --background: rgb(58, 63, 61);
     color: rgb(255, 255, 255);
 }
 

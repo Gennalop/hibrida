@@ -1,0 +1,45 @@
+ion-content {
+    --background: #4CAF50;
+    margin: 50px;
+}
+
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Animación de aparición */
+.intro-logo,
+.intro-title {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.intro-logo {
+    animation-delay: 0s;
+    width: 70vmin;
+    height: 70vmin;
+}
+
+.intro-title {
+    color: white;
+    font-size: 250%;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

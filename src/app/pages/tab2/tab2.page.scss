@@ -1,5 +1,5 @@
 ion-toolbar {
-    --background: rgb(18, 129, 92);
+    --background: #4CAF50;
     padding-right: 10px;
 
     ion-title {
@@ -69,6 +69,19 @@ p {
 .conditional-button:disabled {
     --background: #ccc;
     --color: #666;
+}
+
+
+ion-card-title {
+    color: black;
+}
+
+ion-list {
+    background-color: white;
+    ion-label {
+        background-color: white;
+        color: black;
+    }
 }
 
 @media (max-width: 576px) {
